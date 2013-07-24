@@ -1,0 +1,86 @@
+body{
+  font: 14px/1.4 Myriad Pro, Arial, Sans-serif;
+}
+
+a {
+  color: #80f;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+mark { background: #ffa; margin-left: 5px; }
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 209px;
+  padding: 10px 20px;
+  background: #f5f5f5;
+  border-right: 1px solid #e5e5e5;
+  overflow: auto;
+}
+
+.sidebar nav {
+  display: none;
+  border-bottom: 1px solid #e5e5e5;
+  color: #aaa;
+}
+
+.sidebar nav span:hover {
+  cursor: pointer;
+  background: #ffc;
+}
+.sidebar .current {
+  color: black;
+  font-weight: 800
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.container {
+  margin-left: 270px;
+}
+
+pre, code {
+  font-family: monaco;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+/* prettify */
+section .com { color: #93a1a1; }
+section .lit { color: #195f91; }
+section .pun, .opn, .clo { color: #93a1a1; }
+section .fun { color: #dc322f; }
+section .str, .atv { color: #D14; }
+section .kwd, .prettyprint .tag { color: #1e347b; }
+section .typ, .atn, .dec, .var { color: teal; }
+section .pln { color: #48484c; }
+
+section pre.prettyprint {
+  padding: 8px;
+  background-color: #f5f5f5;
+  border: none;
+}
+
+section {
+}
+
+section h2 {
+  margin: 3em 0 0;
+}
+
+h2 small {
+  font-size: 14px;
+  font-weight: 400;
+  margin-left: 5px;
+}
+h2 small a { color: #aaa; text-decoration: underline; }
+h2 small a:hover { color: #80f; }
+
+code.sig { color: #aaa }
