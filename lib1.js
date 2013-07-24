@@ -24,12 +24,12 @@
   // 3. Functions with optional arguments are split into two functions. One with _ at the end that takes the options. E.g: indexOf(x,str) & indexOf_(x,y,str)
   // 4. Everything is pure
 
-  var LambdaJS = {};
-  var Strings = {};
-  var Arrays = {};
-  var Objects = {};
-  var Regexps = {};
-  var Numbers = {};
+  LambdaJS = {};
+  Strings = {};
+  Arrays = {};
+  Objects = {};
+  Regexps = {};
+  Numbers = {};
 
   // STRINGS
   // =========================
@@ -49,11 +49,6 @@
     return x.concat.apply("", arguments);
   }.autoCurry(2);
 
-  //+ contains :: String -> String -> Boolean
-  Strings.contains = function( value, s ){
-    return s.indexOf( value ) !== -1;
-  }.autoCurry();
-
   //+ indexOf :: a -> String -> Int
   Strings.indexOf = function( value, a ){
     return a.indexOf( value );
@@ -64,12 +59,7 @@
     return a.indexOf( value, len );
   }.autoCurry();
 
-  //+ localeCompare :: String -> String -> Int
-  Strings.localeCompare = function( compareStr, s ){
-    return s.localeCompare( compareStr );
-  }.autoCurry();
-
-  //+ match :: Regexp -> String -> [String]
+  //+ match :: Regexp|String -> String -> [String]
   Strings.match = function( regexp, s ){
     return s.match( regexp );
   }.autoCurry();
@@ -79,21 +69,20 @@
     return s.replace( a, b );
   }.autoCurry();
 
-  //+ search :: Regexp -> String -> Int
+  //+ search :: Regexp|String -> String -> Int
   Strings.search = function( regexp, s ){
     return s.search( regexp );
   }.autoCurry();
 
-  //+ slice :: Int ->  [a]
+  //+ slice :: Int -> String -> String
   Strings.slice = function( begin, a ){
     return a.slice( begin );
   }.autoCurry();
 
-  //+ slice_ :: Int -> Int -> [a]
+  //+ slice_ :: Int -> Int -> String
   Strings.slice_ = function( begin, end, a ){
     return a.slice( begin, end );
   }.autoCurry();
-
 
   //+ split :: String -> String -> [String]
   Strings.split = function( separator, s ){
@@ -142,9 +131,7 @@
 
   //+ trim :: String -> String
   Strings.trim = function( s ){
-    // polyfill
     return s.trim();
-    // return s.replace(/^\s+|\s+$/g,'');
   }
 
 
@@ -169,6 +156,16 @@
   //+ forEach :: (a -> _) -> [a] -> [a]
   Arrays.forEach = function( fn, xs ) {
     return xs.forEach(fn);
+  }.autoCurry();
+
+  //+ indexOf :: a -> [a] -> Int
+  Arrays.indexOf = function( value, a ){
+    return a.indexOf( value );
+  }.autoCurry();
+
+  //+ indexOf_ :: a -> Int -> [a] -> Int
+  Arrays.indexOf_ = function( value, len, a ){
+    return a.indexOf( value, len );
   }.autoCurry();
 
   //+ join :: String -> [a] -> String
@@ -238,6 +235,16 @@
   Arrays.sort = function( a ){
     return a.slice(0).sort();
   }
+
+   //+ slice :: Int -> [a]
+  Arrays.slice = function( begin, a ){
+    return a.slice( begin );
+  }.autoCurry();
+
+  //+ slice_ :: Int -> Int -> [a]
+  Arrays.slice_ = function( begin, end, a ){
+    return a.slice( begin, end );
+  }.autoCurry();
 
   //+ splice :: Int -> Int -> [a] -> [a]
   Arrays.splice = function( index, count, a ){

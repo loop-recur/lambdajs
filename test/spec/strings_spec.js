@@ -2,7 +2,7 @@ describe("Strings", function() {
   beforeEach(LambdaJS.expose);
 
   it("charAt", function() {
-    expect(charAt(1, "hey")).toEqual('e');
+    expect(Strings.charAt(1, "hey")).toEqual('e');
     expect(charAt(1)("hey")).toEqual('e');
   });
   
@@ -84,15 +84,9 @@ describe("Strings", function() {
 
   it("substring_", function() {
     var str="Hello world!";
-    expect(substring(3, str)).toEqual('lo world!');
+    expect(substring(3, 5, str)).toEqual('lo');
     expect(substring_(3)(5)(str)).toEqual('lo');
   });
-
-  it("localeCompare", function() {
-    expect(localeCompare("c", "a")).toBeLessThan(0);
-    expect(localeCompare("a", "c")).toBeGreaterThan(0)
-    expect(localeCompare("a", "a")).toEqual(0)
-  });  
 
   it("toLocaleLowerCase", function() {
     expect(toLocaleLowerCase("ALPHABET")).toEqual('alphabet');

@@ -13,6 +13,12 @@ describe("Arrays", function() {
     expect(indexOf("Apple")(fruits)).toEqual(2);
   });
 
+  it("indexOf_", function() {
+    var fruits = ["Banana", "Orange", "Apple", "Mango", "Apple"];
+    expect(indexOf_("Apple", 3, fruits)).toEqual(4);
+    expect(indexOf_("Apple", 3)(fruits)).toEqual(4);
+  });
+
   it("join", function() {
     var fruits = ["Banana", "Orange", "Apple", "Mango"];
     expect(join(' ', fruits)).toEqual("Banana Orange Apple Mango");
