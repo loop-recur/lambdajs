@@ -84,7 +84,7 @@ describe("Strings", function() {
 
   it("substring_", function() {
     var str="Hello world!";
-    expect(substring(3, 5, str)).toEqual('lo');
+    expect(substring_(3, 5, str)).toEqual('lo');
     expect(substring_(3)(5)(str)).toEqual('lo');
   });
 
