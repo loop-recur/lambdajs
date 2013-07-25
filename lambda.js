@@ -22,7 +22,7 @@
   // 1. The data comes last. E.g: str.method(arg) -> method(arg, str)
   // 2. Everything is curried
   // 3. Functions with optional arguments are split into two functions. One with _ at the end that takes the options. E.g: indexOf(x,str) & indexOf_(x,y,str)
-  // 4. Everything is pure
+  // 4. Everything is pure in that it doesn't mutate arguments
 
   LambdaJS = {};
   Strings = {};
@@ -57,6 +57,11 @@
   //+ indexOf_ :: a -> Int -> String -> Int
   Strings.indexOf_ = function( value, len, a ){
     return a.indexOf( value, len );
+  }.autoCurry();
+
+  //+ lastIndexOf :: a -> [a] -> Int
+  Strings.lastIndexOf = function( value, a ){
+    return a.lastIndexOf( value );
   }.autoCurry();
 
   //+ match :: Regexp|String -> String -> [String]
@@ -153,7 +158,7 @@
     return xs.filter(fn);
   }.autoCurry();
 
-  //+ forEach :: (a -> _) -> [a] -> [a]
+  //+ forEach :: (a -> undefined) -> [a] -> undefined
   Arrays.forEach = function( fn, xs ) {
     return xs.forEach(fn);
   }.autoCurry();
@@ -235,16 +240,6 @@
   Arrays.sort = function( a ){
     return a.slice(0).sort();
   }
-
-   //+ slice :: Int -> [a]
-  Arrays.slice = function( begin, a ){
-    return a.slice( begin );
-  }.autoCurry();
-
-  //+ slice_ :: Int -> Int -> [a]
-  Arrays.slice_ = function( begin, end, a ){
-    return a.slice( begin, end );
-  }.autoCurry();
 
   //+ splice :: Int -> Int -> [a] -> [a]
   Arrays.splice = function( index, count, a ){

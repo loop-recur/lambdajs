@@ -38,6 +38,11 @@ describe("Utils", function() {
     expect(I(2)).toEqual(2)
   });
 
+  it("mod", function() {
+    expect(mod(5, 2)).toEqual(1)
+    expect(mod(6)(2)).toEqual(0)
+  });
+
   it("gt", function() {
     expect(gt(2, 3)).toEqual(false)
     expect(gt(3, 3)).toEqual(false)

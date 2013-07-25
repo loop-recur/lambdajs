@@ -113,9 +113,9 @@ var compose = function() {
 
   , flip = function( fn ){
       return function(){
-        var args = toArray(arguments, 0).reverse();
+        var args = Array.slice(arguments, 0).reverse();
         return fn.apply( null, args );
-      };
+      }.autoCurry(fn.arity || fn.length);
     }
 
   , multiply = function( x, y ) {
@@ -132,6 +132,10 @@ var compose = function() {
 
   , subtract = function( x, y ) {
       return x - y;
+    }.autoCurry()
+
+  , mod = function(x,y) {
+      return x % y;
     }.autoCurry()
 
   , gt = function( x, y ) {
