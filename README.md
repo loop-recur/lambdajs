@@ -9,3 +9,8 @@ RULES:
  4. Every function is pure
 
 Thanks so much to @casperin for doing a ton of the work on this!
+
+USAGE:
+
+LambdaJS.expose();
+
