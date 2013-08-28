@@ -1,0 +1,19 @@
+{
+    "name": "lambdajs",
+    "version": "0.0.1",
+    "description": "The full ECMAScript API done a functional way.",
+    "main": "index.js",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/tlevine/lambdajs.git"
+    },
+    "homepage": "https://github.com/loop-recur/lambdajs",
+    "keywords": [
+        "functional"
+    ],
+    "author": {
+        "name": "Loop Recur",
+        "url": "http://looprecur.com/"
+    },
+    "license": "MIT"
+}
