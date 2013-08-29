@@ -1,5 +1,5 @@
 {
-    "name": "lambdajs",
+    "name": "lambda",
     "version": "0.0.1",
     "description": "The full ECMAScript API done a functional way.",
     "main": "index.js",

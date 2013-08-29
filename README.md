@@ -24,7 +24,7 @@ In the browser
 In node
 
 ```sh
-npm install lambdajs
+npm install lambda
 ```
 
 ```javascript
