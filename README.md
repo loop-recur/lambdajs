@@ -28,6 +28,6 @@ npm install lambda
 ```
 
 ```javascript
-require('LambdaJS');
+require('pipeish');
 LambdaJS.expose();
 ```
