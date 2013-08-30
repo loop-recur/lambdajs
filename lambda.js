@@ -340,7 +340,7 @@
 // ========================
 
   LambdaJS.expose = function(env, mod) {
-    var win = getFreeGlobal(window);
+    var win = getFreeGlobal((typeof window === 'object' ? window : {}));
     [Strings, Arrays, Regexps, Objects, Numbers, LambdaJS].map(function(mod){
       exposeModuleToGlobal(win, mod);
     });
