@@ -31,3 +31,11 @@ npm install lambda
 require('pipeish');
 LambdaJS.expose();
 ```
+
+
+ROADMAP:
+- Merge utils into lambda js
+- Remove excess namespaces
+- Add amd support / check cjs support
+- finish tests/docs
+- So close!
