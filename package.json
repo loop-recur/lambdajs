@@ -15,7 +15,8 @@
         "url": "http://looprecur.com/"
     },
     "dependencies": {
-      "lodash.curry": "*"
+      "lodash.curry": "*",
+      "lodash.compose": "*"
     },
     "devDependencies": {
       "jasmine-node": "*"

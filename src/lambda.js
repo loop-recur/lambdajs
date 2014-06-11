@@ -1,4 +1,5 @@
 var curry = require('lodash.curry');
+var compose = require('lodash.compose');
 
 // All methods from
 //  * Arrays
@@ -345,6 +346,7 @@ _LambdaJS.valueOf = function( a ){
 }
 
 _LambdaJS.curry = curry;
+_LambdaJS.compose = compose;
 
 _LambdaJS.expose = function(env) {
   var f;

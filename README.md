@@ -14,7 +14,6 @@ Thanks so much to @casperin for doing a ton of the work on this!
 ## DOCS
 [docs](https://rawgit.com/loop-recur/lambdajs/master/docs/docs.html)
 
-
 ## USAGE
 
 There is an `expose()` method to "mix in" to the global namespace if
@@ -35,15 +34,67 @@ define(['dist/lambda.amd.js'], function(Ljs){
 
 In node
 
-```sh
-npm install lambdajs
-```
-
 ```js
+npm install lambdajs
 var ljs = require('lambdajs');
 ```
 or
 ```js
 require('lambdajs').expose(global);
 ```
+## MOTIVATION 
+
+Let's say you want to replace "-" for "/" in a js function. Typically
+you'd have to do:
+
+```js
+var dashesForSlashes = function(str) {
+  return str.replace(/-/g, '/');
+}
+```
+
+This has some issues.
+* We had to name a temporary variable `str`
+* We had to write some "glue code" - a full `function(){}` complete with `return`
+* We are dependent upon the `str` to be able to call `replace`
+
+In functional "point free" style we don't need to grab a hold of our data to be able to
+write new functions. In this case, by "data" I mean the string.
+
+LambdaJS let's us write something like this:
+
+```js
+var dashesForSlashes = replace(/-/g, '/');
+```
+
+This is very useful when dealing with `compose`
+```js
+var f = compose(reverse, replace(/-/g, '/'))
+f("hi-guys") //=> syug/ih
+```
+
+Speaking of which...In standard javascript, if you call `reverse` on an array, you will
+permanently alter the array.
+
+```js
+var users = ['Alex', 'Sam', 'Pat']
+users.reverse(); //=> ['Pat', 'Sam' 'Alex']
+users //=> ['Pat', 'Sam' 'Alex']
+```
+
+That can be quite surprising when you go to display users in a different
+spot of your app and they are out of order.
+
+LambdaJS makes all the built-in functions "pure", meaning there is no
+side-effects or mutation.
+
+```js
+var users = ['Alex', 'Sam', 'Pat']
+reverse(users); //=> ['Pat', 'Sam' 'Alex']
+users //=> [['Alex', 'Sam', 'Pat']
+```
+
+If you're interested in learning more about currying and composition, I
+gave a talk on this subject a little while ago:
+[Hey underscore, you're doing it wrong!](https://www.youtube.com/watch?v=m3svKOdZijA)
 
