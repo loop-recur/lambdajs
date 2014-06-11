@@ -9,7 +9,7 @@ The full ECMAScript API done a functional way.
  3. Functions with optional arguments are split into two functions. One with `_` at the end that takes the options. E.g: `indexOf(x,str)` & `indexOf_(x,y,str)`
  4. Every function is pure
 
-Thanks so much to @casperin for doing a ton of the work on this!
+Thanks so much to @casperin and @eschmitt for doing a ton of the work on this though isn't not visible in the contributors.
 
 ## DOCS
 [docs](https://rawgit.com/loop-recur/lambdajs/master/docs/docs.html)
