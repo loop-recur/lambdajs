@@ -1,4 +1,6 @@
 describe("Arrays", function() {
+  if(typeof require != "undefined") { require('../../index.js').expose(global); }
+
   it("concat", function() {
     var hege = ["Cecilie", "Lone"];
     var stale = ["Emil", "Tobias", "Linus"];

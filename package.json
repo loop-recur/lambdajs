@@ -1,19 +1,24 @@
 {
-    "name": "pipeish",
+    "name": "lambdajs",
     "version": "0.0.1",
-    "description": "The full ECMAScript API done a functional way.",
+    "description": "The full ECMAScript API done a pointfree way.",
     "main": "index.js",
+    "scripts": { "test": "jasmine-node test" },
     "repository": {
         "type": "git",
-        "url": "git://github.com/tlevine/lambdajs.git"
+        "url": "git://github.com/loop-recur/lambdajs.git"
     },
     "homepage": "https://github.com/loop-recur/lambdajs",
-    "keywords": [
-        "functional"
-    ],
+    "keywords": [ "functional", "pointfree" ],
     "author": {
         "name": "Loop Recur",
         "url": "http://looprecur.com/"
+    },
+    "dependencies": {
+      "lodash.curry": "*"
+    },
+    "devDependencies": {
+      "jasmine-node": "*"
     },
     "license": "MIT"
 }

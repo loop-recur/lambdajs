@@ -1,8 +1,7 @@
 describe("Strings", function() {
-  beforeEach(LambdaJS.expose);
+  if(typeof require != "undefined") { require('../../index.js').expose(global); }
 
   it("charAt", function() {
-    expect(Strings.charAt(1, "hey")).toEqual('e');
     expect(charAt(1)("hey")).toEqual('e');
   });
   

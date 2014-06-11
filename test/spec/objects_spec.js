@@ -1,6 +1,6 @@
 describe("Object", function() {
+  if(typeof require != "undefined") { require('../../index.js').expose(global); }
   var obj = {a:1, b:2};
-  beforeEach(LambdaJS.expose);
 
   it("toLocaleString", function() {
     expect(toLocaleString(obj)).toEqual("[object Object]");

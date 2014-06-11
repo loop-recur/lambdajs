@@ -1,6 +1,6 @@
 describe("Numbers", function() {
-  beforeEach(LambdaJS.expose);
-  
+  if(typeof require != "undefined") { require('../../index.js').expose(global); }
+
   it("toExponential", function() {
     expect(toExponential(3, 5.56789)).toEqual("5.568e+0")
     expect(toExponential(3)(5.56789)).toEqual("5.568e+0")

@@ -11,31 +11,33 @@ The full ECMAScript API done a functional way.
 
 Thanks so much to @casperin for doing a ton of the work on this!
 
+## DOCS
+[docs](https://rawgit.com/loop-recur/lambdajs/master/docs/docs.html)
+
+
 ## USAGE
+
+There is an `expose()` method to "mix in" to the global namespace if
+desired.
 
 In the browser
 
 ```html
-<script src="utils.js"></script>
 <script src="lambda.js"></script>
-<script>LambdaJS.expose();</script>
+<script>LambdaJS.expose(window);</script>
 ```
 
 In node
 
 ```sh
-npm install lambda
+npm install lambdajs
 ```
 
-```javascript
-require('pipeish');
-LambdaJS.expose();
+```js
+var ljs = require('lambdajs');
+```
+or
+```js
+require('lambdajs').expose(global);
 ```
 
-
-ROADMAP:
-- Merge utils into lambda js
-- Remove excess namespaces
-- Add amd support / check cjs support
-- finish tests/docs
-- So close!

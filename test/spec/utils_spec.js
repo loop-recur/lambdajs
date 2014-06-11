@@ -1,41 +1,9 @@
 describe("Utils", function() {
-  beforeEach(LambdaJS.expose);
+  if(typeof require != "undefined") { require('../../index.js').expose(global); }
 
-  it("compose", function() {
-    var oneAndDouble = compose(multiply(2), add(1))
-    expect(oneAndDouble(1)).toEqual(4)
-  });
-
-  it("partial", function() {
-    var twoTimesFive = multiply.partial(2, 5)
-    expect(twoTimesFive()).toEqual(10)
-  });
-
-  it("parallel", function() {
-    var finished = false;
-    var f = function(y){
-      expect(y).toEqual(2);
-      expect(g).toHaveBeenCalledWith(2)
-      finished = true;
-    }
-    var g = jasmine.createSpy();
-    var doubleAndAdd = parallel(f, g);
-    waitsFor(function(){return finished});
-    doubleAndAdd(2);
-  });
-
-  it("S", function() {
-    var addTwoMultiplyI = S(multiply, add(2));
-    expect(addTwoMultiplyI(3)).toEqual(15)
-  });
-
-  it("K", function() {
-    var two = K(2);
-    expect(two()).toEqual(2)
-  });
-
-  it("I", function() {
-    expect(I(2)).toEqual(2)
+  it("get", function() {
+    expect(get("a", {"a":"happy", "b":"sad"})).toEqual("happy");
+    expect(get(1, ["a", "b", "c"])).toEqual("b");
   });
 
   it("mod", function() {

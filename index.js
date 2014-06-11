@@ -1,2 +1,1 @@
-require('./utils.js');
-require('./lambda.js');
+module.exports = require('./src/lambda.js');

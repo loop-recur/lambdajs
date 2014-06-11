@@ -1,6 +1,6 @@
 describe("Regex", function() {
-  beforeEach(LambdaJS.expose);
-  
+  if(typeof require != "undefined") { require('../../index.js').expose(global); }
+
   it("exec", function() {
     var str="Hello world!";
     var patt=/Hello/;
