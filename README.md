@@ -23,8 +23,14 @@ desired.
 In the browser
 
 ```html
-<script src="lambda.js"></script>
+<script src="dist/lambda.browser.js"></script>
 <script>LambdaJS.expose(window);</script>
+```
+or
+```js
+define(['dist/lambda.amd.js'], function(Ljs){
+	
+});
 ```
 
 In node
