@@ -98,3 +98,8 @@ If you're interested in learning more about currying and composition, I
 gave a talk on this subject a little while ago:
 [Hey underscore, you're doing it wrong!](https://www.youtube.com/watch?v=m3svKOdZijA)
 
+
+
+ROADMAP (help if ya want!):
+- Possibly use: https://github.com/codemix/fast.js
+- Include polyfills for future ecmascript functions (or flip/curry other dependent polyfill lib)
