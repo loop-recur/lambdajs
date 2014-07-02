@@ -69,12 +69,12 @@ var dashesForSlashes = replace(/-/g, '/');
 
 This is very useful when dealing with `compose`
 ```js
-var f = compose(reverse, replace(/-/g, '/'))
-f("hi-guys") //=> syug/ih
+var f = compose(toUpperCase, replace(/-/g, '/'))
+f("hi-guys") //=> HI/GUYS
 ```
 
-Speaking of which...In standard javascript, if you call `reverse` on an array, you will
-permanently alter the array.
+Another issue is, in standard javascript, if you call `reverse` on an array, you will
+permanently alter the array:
 
 ```js
 var users = ['Alex', 'Sam', 'Pat']
