@@ -1,6 +1,6 @@
 {
     "name": "lambdajs",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "The full ECMAScript API done a pointfree way.",
     "main": "index.js",
     "scripts": { "test": "jasmine-node test" },

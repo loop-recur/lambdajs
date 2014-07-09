@@ -1,7 +1,4 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-module.exports = require('./src/lambda.js');
-
-},{"./src/lambda.js":26}],2:[function(require,module,exports){
 /**
  * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
  * Build: `lodash modularize modern exports="npm" -o ./npm/`
@@ -64,7 +61,7 @@ function compose() {
 
 module.exports = compose;
 
-},{"lodash.isfunction":3}],3:[function(require,module,exports){
+},{"lodash.isfunction":2}],2:[function(require,module,exports){
 /**
  * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
  * Build: `lodash modularize modern exports="npm" -o ./npm/`
@@ -93,7 +90,7 @@ function isFunction(value) {
 
 module.exports = isFunction;
 
-},{}],4:[function(require,module,exports){
+},{}],3:[function(require,module,exports){
 /**
  * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
  * Build: `lodash modularize modern exports="npm" -o ./npm/`
@@ -139,7 +136,7 @@ function curry(func, arity) {
 
 module.exports = curry;
 
-},{"lodash._createwrapper":5}],5:[function(require,module,exports){
+},{"lodash._createwrapper":4}],4:[function(require,module,exports){
 /**
  * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
  * Build: `lodash modularize modern exports="npm" -o ./npm/`
@@ -247,7 +244,7 @@ function createWrapper(func, bitmask, partialArgs, partialRightArgs, thisArg, ar
 
 module.exports = createWrapper;
 
-},{"lodash._basebind":6,"lodash._basecreatewrapper":15,"lodash._slice":24,"lodash.isfunction":25}],6:[function(require,module,exports){
+},{"lodash._basebind":5,"lodash._basecreatewrapper":14,"lodash._slice":23,"lodash.isfunction":24}],5:[function(require,module,exports){
 /**
  * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
  * Build: `lodash modularize modern exports="npm" -o ./npm/`
@@ -311,7 +308,7 @@ function baseBind(bindData) {
 
 module.exports = baseBind;
 
-},{"lodash._basecreate":7,"lodash._setbinddata":10,"lodash._slice":24,"lodash.isobject":13}],7:[function(require,module,exports){
+},{"lodash._basecreate":6,"lodash._setbinddata":9,"lodash._slice":23,"lodash.isobject":12}],6:[function(require,module,exports){
 var global=typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {};/**
  * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
  * Build: `lodash modularize modern exports="npm" -o ./npm/`
@@ -355,7 +352,7 @@ if (!nativeCreate) {
 
 module.exports = baseCreate;
 
-},{"lodash._isnative":8,"lodash.isobject":13,"lodash.noop":9}],8:[function(require,module,exports){
+},{"lodash._isnative":7,"lodash.isobject":12,"lodash.noop":8}],7:[function(require,module,exports){
 /**
  * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
  * Build: `lodash modularize modern exports="npm" -o ./npm/`
@@ -391,7 +388,7 @@ function isNative(value) {
 
 module.exports = isNative;
 
-},{}],9:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 /**
  * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
  * Build: `lodash modularize modern exports="npm" -o ./npm/`
@@ -419,7 +416,7 @@ function noop() {
 
 module.exports = noop;
 
-},{}],10:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 /**
  * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
  * Build: `lodash modularize modern exports="npm" -o ./npm/`
@@ -464,11 +461,11 @@ var setBindData = !defineProperty ? noop : function(func, value) {
 
 module.exports = setBindData;
 
-},{"lodash._isnative":11,"lodash.noop":12}],11:[function(require,module,exports){
+},{"lodash._isnative":10,"lodash.noop":11}],10:[function(require,module,exports){
+module.exports=require(7)
+},{}],11:[function(require,module,exports){
 module.exports=require(8)
 },{}],12:[function(require,module,exports){
-module.exports=require(9)
-},{}],13:[function(require,module,exports){
 /**
  * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
  * Build: `lodash modularize modern exports="npm" -o ./npm/`
@@ -509,7 +506,7 @@ function isObject(value) {
 
 module.exports = isObject;
 
-},{"lodash._objecttypes":14}],14:[function(require,module,exports){
+},{"lodash._objecttypes":13}],13:[function(require,module,exports){
 /**
  * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
  * Build: `lodash modularize modern exports="npm" -o ./npm/`
@@ -531,7 +528,7 @@ var objectTypes = {
 
 module.exports = objectTypes;
 
-},{}],15:[function(require,module,exports){
+},{}],14:[function(require,module,exports){
 /**
  * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
  * Build: `lodash modularize modern exports="npm" -o ./npm/`
@@ -611,23 +608,23 @@ function baseCreateWrapper(bindData) {
 
 module.exports = baseCreateWrapper;
 
-},{"lodash._basecreate":16,"lodash._setbinddata":19,"lodash._slice":24,"lodash.isobject":22}],16:[function(require,module,exports){
-arguments[4][7][0].apply(exports,arguments)
-},{"lodash._isnative":17,"lodash.isobject":22,"lodash.noop":18}],17:[function(require,module,exports){
+},{"lodash._basecreate":15,"lodash._setbinddata":18,"lodash._slice":23,"lodash.isobject":21}],15:[function(require,module,exports){
+arguments[4][6][0].apply(exports,arguments)
+},{"lodash._isnative":16,"lodash.isobject":21,"lodash.noop":17}],16:[function(require,module,exports){
+module.exports=require(7)
+},{}],17:[function(require,module,exports){
 module.exports=require(8)
 },{}],18:[function(require,module,exports){
 module.exports=require(9)
-},{}],19:[function(require,module,exports){
-module.exports=require(10)
-},{"lodash._isnative":20,"lodash.noop":21}],20:[function(require,module,exports){
+},{"lodash._isnative":19,"lodash.noop":20}],19:[function(require,module,exports){
+module.exports=require(7)
+},{}],20:[function(require,module,exports){
 module.exports=require(8)
 },{}],21:[function(require,module,exports){
-module.exports=require(9)
-},{}],22:[function(require,module,exports){
+module.exports=require(12)
+},{"lodash._objecttypes":22}],22:[function(require,module,exports){
 module.exports=require(13)
-},{"lodash._objecttypes":23}],23:[function(require,module,exports){
-module.exports=require(14)
-},{}],24:[function(require,module,exports){
+},{}],23:[function(require,module,exports){
 /**
  * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
  * Build: `lodash modularize modern exports="npm" -o ./npm/`
@@ -667,9 +664,9 @@ function slice(array, start, end) {
 
 module.exports = slice;
 
+},{}],24:[function(require,module,exports){
+module.exports=require(2)
 },{}],25:[function(require,module,exports){
-module.exports=require(3)
-},{}],26:[function(require,module,exports){
 var curry = require('lodash.curry');
 var compose = require('lodash.compose');
 
@@ -1036,4 +1033,4 @@ if(typeof window == "object") {
   LambdaJS = _LambdaJS;
 }
 
-},{"lodash.compose":2,"lodash.curry":4}]},{},[1])
+},{"lodash.compose":1,"lodash.curry":3}]},{},[25])
